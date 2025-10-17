@@ -16,4 +16,4 @@ const contaBancaria = {
     console.log(`Saldo atual: R$ ${this.saldo.toFixed(2)} (Conta ${this.numero})`);
   }
 };
-// Ex.: contaBancaria.depositar(100); contaBancaria.sacar(40); contaBancaria.informarSaldo();
+

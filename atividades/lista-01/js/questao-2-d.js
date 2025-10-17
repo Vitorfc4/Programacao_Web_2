@@ -8,7 +8,7 @@ function somaPrimos(arrayDeInteiros) {
   return arrayDeInteiros.reduce((acc, v) => acc + (ehPrimo(v) ? v : 0), 0);
 }
 
-// Demo simples via prompt: informe números separados por espaço
+
 const entrada = prompt("Informe números inteiros positivos separados por espaço:");
 const arr = entrada.trim().split(/\s+/).map(x => Number(x));
 alert(`Soma dos primos = ${somaPrimos(arr)}`);

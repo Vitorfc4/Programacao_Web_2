@@ -7,4 +7,4 @@ function calcular(a, b, op) {
     default: throw new Error("Operador inválido. Use +, -, *, /.");
   }
 }
-// Ex.: console.log(calcular(8, 2, "/"));
+
