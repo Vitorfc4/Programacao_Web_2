@@ -34,3 +34,5 @@ Inferência (estática): o compilador deduz tipos a partir do uso, sem anotaçõ
 
 JS é dinamicamente tipada e com coerções (muitas) → considerada fracamente tipada em vários cenários. O tipo é do valor, não da variável; conversões implícitas acontecem (ex.: 1 + "2" -> "12"). Tipagem estática opcional no ecossistema via TypeScript/JSDoc, mas o runtime JS continua dinâmico.
 — Referências úteis: MDN “Data types and structures”, “Type coercion”.
+
+> rascunho: ajustes via VS Code
