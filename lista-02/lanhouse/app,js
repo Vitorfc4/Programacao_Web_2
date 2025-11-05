@@ -1,0 +1,49 @@
+const toCents = (v) => Math.round(Number(String(v).replace(',', '.')) * 100);
+const fromCents = (c) => c / 100;
+const fmtBRL = (n) => new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL' }).format(n);
+
+function show(el, html, ok = true) {
+  el.classList.toggle('error', !ok);
+  el.classList.toggle('success', ok);
+  el.innerHTML = html;
+}
+
+function required(...pairs) {
+  for (const [el, msg] of pairs) {
+    if (!el.value.trim()) {
+      el.focus();
+      return msg;
+    }
+  }
+  return null;
+}
+
+document.getElementById('form-lan').addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const valor15 = document.getElementById('valor15');
+  const tempo = document.getElementById('tempo');
+  const out = document.getElementById('out-lan');
+
+  const err = required([valor15, 'Informe o valor por 15 minutos.'], [tempo, 'Informe o tempo em minutos.']);
+  if (err) return show(out, `❌ ${err}`, false);
+
+  const vCents = toCents(valor15.value);
+  const minutos = parseInt(tempo.value, 10);
+
+  if (!(vCents > 0) || !(minutos > 0)) return show(out, '❌ Valores inválidos.', false);
+
+  const blocos = Math.ceil(minutos / 15);
+  const totalCents = blocos * vCents;
+
+  const html = `
+    <p>Tempo utilizado: <strong>${minutos} min</strong> → <strong>${blocos}</strong> bloco(s) de 15 min.</p>
+    <p><strong>Total a pagar: ${fmtBRL(fromCents(totalCents))}</strong></p>`;
+  show(out, html, true);
+});
+
+document.getElementById('form-lan').addEventListener('reset', () => {
+  const out = document.getElementById('out-lan');
+  out.className = 'out';
+  out.textContent = '';
+});
