@@ -1,0 +1,122 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+* { box-sizing: border-box; }
+
+body {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  font-family: Verdana, system-ui, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  background-color: #f0f8ff;
+}
+
+.container {
+  width: 560px;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  padding: 0 3rem;
+
+  & h1 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.5rem 0 1rem;
+  }
+}
+
+.entrada {
+  width: 100%;
+
+  & form {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  & form > * {
+    padding: 0.6rem;
+    font-size: 1rem;
+  }
+
+  & input {
+    flex: 1;
+    border: none;
+    border-bottom: 2px solid #40a640;
+    outline: none;
+    background-color: transparent;
+  }
+
+  & button {
+    background-color: #40a640;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    padding-inline: 1rem;
+    transition: filter .15s ease-in-out;
+
+    &:hover { filter: brightness(1.05); }
+    &:active { filter: brightness(0.95); }
+  }
+}
+
+.lista h3 {
+  margin: .75rem 0;
+}
+
+#listaTarefas {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  row-gap: 12px;
+
+  & button {
+    all: unset;
+  }
+
+  & li {
+    cursor: default;
+    display: flex;
+    align-items: stretch;
+    background-color: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.08);
+
+    & span {
+      flex: 1;
+      padding: 12px;
+      line-height: 1.3;
+    }
+
+    & i {
+      padding: 12px;
+      border-radius: 0 6px 6px 0;
+    }
+
+    & i:hover {
+      background-color: #dc143c;
+      color: #ffffff;
+    }
+  }
+
+  & li:hover {
+    background-color: #eef5fb;
+  }
+}
+
+span.concluida {
+  text-decoration: line-through;
+  color: #778899;
+}
+
+#campoEntrada.input-erro {
+  border-bottom: 2px solid #dc143c;
+  background-color: #ffe5e5;
+}

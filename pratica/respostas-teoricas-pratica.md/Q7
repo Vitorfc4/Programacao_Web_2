@@ -1,0 +1,13 @@
+// Q7
+// addEventListener(tipo, listener, opções?) registra um ouvinte sem apagar
+// outros que já existam. O callback recebe o evento e dá pra usar opções como
+// once, passive e capture.
+// No formulário ficou assim:
+
+// formTarefa.addEventListener("submit", (e) => {
+//   e.preventDefault();
+//   novaTarefa();
+// });
+
+
+// Evita recarregar a página e mantém o código organizado.

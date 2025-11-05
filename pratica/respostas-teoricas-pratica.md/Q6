@@ -1,0 +1,5 @@
+// Q6
+// Defini os cliques direto nas propriedades onclick:
+// span.onclick = (e) => e.target.classList.toggle("concluida");
+// btnExcluir.onclick = () => listaTarefas.removeChild(itemTarefa);
+// O span alterna o visual de “concluída” e o botão remove o <li> da lista.
