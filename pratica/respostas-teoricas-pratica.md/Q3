@@ -1,0 +1,5 @@
+Q3
+Usei campoEntrada.classList.add("input-erro").
+classList é a lista de classes do elemento e facilita adicionar, remover
+ou alternar classes com add, remove, toggle e checar com contains.
+Bem melhor do que mexer na string do class na mão.

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lan House do Aeroporto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Lan House do Aeroporto</h1>
+    <p>Cobrança por blocos de 15 minutos. Frações pagam o bloco inteiro.</p>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <form id="form-lan" novalidate>
+        <div class="field">
+          <label for="valor15">Valor a cada 15 minutos (R$)</label>
+          <input id="valor15" type="number" step="0.01" inputmode="decimal" min="0" placeholder="Ex.: 5,00" required />
+        </div>
+
+        <div class="field">
+          <label for="tempo">Tempo de uso (minutos)</label>
+          <input id="tempo" type="number" step="1" inputmode="numeric" min="1" placeholder="Ex.: 16" required />
+        </div>
+
+        <div class="inline">
+          <button type="submit">Calcular Valor</button>
+          <button class="secondary" type="reset">Limpar</button>
+        </div>
+
+        <div id="out-lan" class="out" aria-live="polite"></div>
+      </form>
+    </article>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

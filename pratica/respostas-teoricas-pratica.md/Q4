@@ -1,0 +1,5 @@
+// Q4
+// createElement() cria um novo elemento do DOM em memória e recebe o nome da
+// tag como string, por exemplo document.createElement("li").
+// Depois de criar e configurar, eu insiro no DOM (tipo com appendChild) pra
+// ele aparecer na página.

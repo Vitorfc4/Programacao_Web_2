@@ -1,0 +1,7 @@
+Q2
+I → B, II → C, III → A.
+getElementById pega um único elemento pelo id;
+querySelector retorna o primeiro que casa com um seletor CSS;
+getElementsByTagName traz todos os elementos de uma tag (coleção “ao vivo”).
+
+Q3

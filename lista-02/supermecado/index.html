@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Promoção no Supermercado</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Promoção no Supermercado</h1>
+    <p>Na compra de 3 unidades do mesmo produto, 1 sai com 50% de desconto.</p>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <form id="form-mercado" novalidate>
+        <div class="field">
+          <label for="produto">Descrição do produto</label>
+          <input id="produto" type="text" placeholder="Ex.: Shampoo" required />
+        </div>
+
+        <div class="field">
+          <label for="precoProd">Preço unitário (R$)</label>
+          <input id="precoProd" type="number" step="0.01" inputmode="decimal" min="0" placeholder="Ex.: 10,00" required />
+          <span class="hint">Use ponto ou vírgula para centavos.</span>
+        </div>
+
+        <div class="inline">
+          <button type="submit">Ver Promoção</button>
+          <button class="secondary" type="reset">Limpar</button>
+        </div>
+
+        <div id="out-mercado" class="out" aria-live="polite"></div>
+      </form>
+    </article>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

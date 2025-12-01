@@ -1,0 +1,5 @@
+<!-- Uso a tag <script> com defer no <head>:
+<script src="index.js" defer></script>
+Assim o JS é baixado junto com o HTML, mas só roda depois que a página foi
+parseada. Evita “elemento não encontrado” e mantém o carregamento leve.
+Se preferir, dá pra usar DOMContentLoaded no JS pelo mesmo motivo. -->
