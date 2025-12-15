@@ -1,0 +1,28 @@
+10a)
+
+Problemas: aninhamento (“piramidização”) reduz legibilidade; manutenção e testes ficam mais difíceis; tratamento de erro fica repetitivo e é fácil esquecer de tratar algum caso; fluxo fica acoplado e pouco reutilizável.
+
+10b)
+
+Promises:
+
+buscarUsuarioP(id)
+  .then((usuario) =>
+    Promise.all([Promise.resolve(usuario), buscarEnderecoP(usuario.id), buscarPedidosP(usuario.id)])
+  )
+  .then(([usuario, endereco, pedidos]) => callback(null, { usuario, endereco, pedidos }))
+  .catch((err) => callback(err));
+
+
+async/await:
+
+async function fluxo(id) {
+  const usuario = await buscarUsuarioP(id);
+  const [endereco, pedidos] = await Promise.all([
+    buscarEnderecoP(usuario.id),
+    buscarPedidosP(usuario.id),
+  ]);
+  return { usuario, endereco, pedidos };
+}
+
+fluxo(id).then((r) => callback(null, r)).catch(callback);
