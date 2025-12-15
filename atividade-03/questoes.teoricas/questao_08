@@ -1,0 +1,3 @@
+8)
+
+A Engine (ex.: V8) executa o JavaScript (call stack, heap, criação/resolução de Promises e microtasks). As Web APIs executam operações assíncronas fora da engine (timers, eventos, fetch), sem bloquear a call stack. O event loop coordena o retorno dessas operações para o JavaScript: quando a call stack está vazia, ele processa primeiro microtasks (Promises/await) e depois macrotasks (timers/eventos), permitindo I/O não-bloqueante com callbacks/Promises.

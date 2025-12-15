@@ -1,0 +1,12 @@
+1a)
+
+Síncrono: executa em sequência (linha a linha); a próxima parte só começa quando a anterior termina.
+Assíncrono: inicia uma operação e o código pode continuar; quando a operação termina, o resultado é tratado depois (callback/Promise/async/await).
+
+Bloqueante: prende o thread principal até finalizar, impedindo que outras tarefas andem nesse período.
+Não-bloqueante: delega o trabalho (Web APIs/SO/libuv) e libera o thread principal; quando termina, o resultado volta ao JS via event loop/filas.
+
+1b)
+
+Síncrono + bloqueante: servidor Node.js usando readFileSync para ler arquivos e responder requisições. Impacto: enquanto lê, o event loop fica travado; outras conexões esperam, aumentando latência e reduzindo throughput.
+Assíncrono + não-bloqueante: endpoint que consulta banco remoto com driver assíncrono usando await. Impacto: enquanto espera a rede/banco, o servidor continua atendendo outras requisições, melhorando throughput e estabilidade.

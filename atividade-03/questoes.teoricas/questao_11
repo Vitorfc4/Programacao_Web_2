@@ -1,0 +1,7 @@
+11)
+
+b) Apenas 1 e 3 estão corretas.
+(1) correto (pending/fulfilled/rejected).
+(2) falso: then roda de forma assíncrona como microtask.
+(3) correto: catch captura rejeições e erros lançados em thens anteriores na cadeia.
+(4) falso: finally executa tanto em sucesso quanto em erro.

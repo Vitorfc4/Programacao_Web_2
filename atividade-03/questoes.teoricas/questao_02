@@ -1,0 +1,5 @@
+2)
+
+c) (2) e (4).
+(2) (banco remoto) e (4) (proxy) são I/O-bound porque o gargalo é esperar rede/entrada-saída. 
+(1) (cálculo para PDF) e (3) (resize de imagens) tendem a ser CPU-bound, pois dependem principalmente de processamento.

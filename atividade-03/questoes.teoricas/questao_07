@@ -1,0 +1,15 @@
+7a1)
+
+A → (pausa ~5s) → B
+
+7a2)
+
+1 → 4 → 3 - promise → 2 - timeout 0ms
+
+7a3)
+
+A → E - fora da async → C - then da promise → D - depois do await → B - timeout
+
+7b)
+
+Microtasks são usadas por Promises e pela continuação do await. Em main, após await, a função é suspensa e o restante (“depois do await”) fica agendado para continuar em uma microtask quando a Promise aguardada resolver. O then imprime “C” como microtask; em seguida a continuação do await roda (imprime “D”). Só depois o setTimeout executa como macrotask (imprime “B - timeout”).

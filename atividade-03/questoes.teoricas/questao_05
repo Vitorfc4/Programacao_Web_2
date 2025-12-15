@@ -1,0 +1,11 @@
+5a)
+
+A call stack executa o script: imprime “A”, entra em tarefaPesada() e fica presa no while por ~5s. Só após sair do loop a função retorna e então o script imprime “B”.
+
+5b)
+
+A interface congela durante o loop: cliques, scroll e repaints não respondem, porque o main thread está ocupado executando JavaScript.
+
+5c)
+
+Dividir o trabalho pesado em “fatias” e agendar cada fatia (ex.: setTimeout(0)/requestIdleCallback) para devolver o controle ao navegador entre blocos, ou mover o processamento para um Web Worker, mantendo a UI responsiva.

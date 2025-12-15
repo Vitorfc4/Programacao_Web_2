@@ -1,0 +1,5 @@
+4)
+
+(F) Há concorrência em JS via event loop: várias operações assíncronas podem estar pendentes e suas continuações/callbacks são executadas de forma intercalada.
+(V) Em Node em máquina multi-core, dá para obter paralelismo com múltiplos processos (cluster) e/ou workers/worker threads.
+(F) Concorrência não exige simultaneidade; pode ser revezamento (interleaving). Simultâneo em múltiplos núcleos é paralelismo.

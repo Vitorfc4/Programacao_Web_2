@@ -1,0 +1,7 @@
+6a)
+
+1 → 4 → 3 - promise → 2 - timeout 0ms
+
+6b)
+
+O script roda na call stack: imprime 1, agenda o setTimeout (macrotask), agenda o then da Promise (microtask), imprime 4 e termina. O event loop esvazia primeiro a fila de microtasks (imprime 3) e só depois executa a próxima macrotask do timer (imprime 2).

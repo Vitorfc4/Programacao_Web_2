@@ -1,0 +1,35 @@
+
+9a)
+readFileSync é bloqueante: enquanto lê do disco, o thread principal do Node fica travado. Com várias conexões, outras requisições ficam esperando, aumentando latência e derrubando o throughput do servidor.
+
+9b)
+import { readFile } from "node:fs";
+
+function serveArquivo(caminho, res) {
+  readFile(caminho, (err, dados) => {
+    if (err) {
+      res.statusCode = 404;
+      return res.end("Arquivo não encontrado");
+    }
+    res.end(dados);
+  });
+}
+
+
+ou
+
+import { readFile } from "node:fs/promises";
+
+async function serveArquivo(caminho, res) {
+  try {
+    const dados = await readFile(caminho);
+    res.end(dados);
+  } catch {
+    res.statusCode = 404;
+    res.end("Arquivo não encontrado");
+  }
+}
+
+9c)
+
+A versão sync é blocking e prende o único thread principal que executa JS, impedindo o event loop de atender outras requisições. A versão async é non-blocking: o I/O ocorre fora do thread principal e o callback/Promise retorna via event loop quando estiver pronto.

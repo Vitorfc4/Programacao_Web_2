@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Produtos (FakeStore API)</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Consulta de Produtos (FakeStore API)</h1>
+      <p>Clique no botão para buscar produtos de forma assíncrona.</p>
+    </header>
+
+    <section class="card">
+      <div class="controls">
+        <button id="btnCarregar">Carregar produtos</button>
+
+        <label class="inline">
+          Limite:
+          <select id="selLimite">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </label>
+      </div>
+
+      <div id="status" class="status" aria-live="polite"></div>
+
+      <div id="lista" class="grid"></div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+3a)
+
+Single-threaded significa que há uma única call stack principal executando JavaScript; só uma tarefa JS roda por vez. Se uma função demora muito, ela bloqueia a execução de outras tarefas JS naquele mesmo thread.
+
+3b)
+
+Vantagens: (1) menos complexidade com sincronização (menos race conditions/deadlocks/locks); (2) bom para alta concorrência I/O-bound via event loop, mantendo o thread livre enquanto espera I/O.
+Desvantagens: (1) tarefas CPU-bound podem bloquear tudo (UI no browser e atendimento no Node); (2) para aproveitar multi-core é preciso usar processos/workers, aumentando a complexidade da arquitetura.

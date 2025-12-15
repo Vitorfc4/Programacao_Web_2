@@ -1,0 +1,14 @@
+13a)
+
+(F) async/await não elimina Promises; ele é sintaxe por cima delas. O await aguarda uma Promise (ou converte valor em Promise resolvida).
+Exemplo:
+
+async function f() { return 10; } // retorna Promise resolvida em 10
+
+13b)
+
+(V) Toda função async sempre retorna uma Promise, mesmo sem await. Se retornar valor, resolve; se lançar erro, rejeita.
+Exemplo:
+
+async function soma(a,b){ return a+b; }
+soma(2,3).then(console.log); // 5
