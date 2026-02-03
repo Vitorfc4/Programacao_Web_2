@@ -1,0 +1,3 @@
+12)
+
+A thread pool do libuv executa certas operações assíncronas (especialmente fs e algumas de crypto/dns) fora do thread principal. Ao chamar uma API assíncrona (ex.: leitura de arquivo), o Node encaminha o trabalho ao libuv; uma thread da pool realiza a operação e, ao concluir, o libuv notifica o event loop. O callback é enfileirado para execução (ou a Promise é resolvida/rejeitada), e o JavaScript trata o resultado quando a call stack estiver livre. Se a pool for pequena para a carga, operações I/O acumulam fila e aumentam a latência; se for grande demais, pode gerar overhead e competição por recursos, afetando desempenho.
